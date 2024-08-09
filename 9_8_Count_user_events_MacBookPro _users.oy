@@ -1,1 +1,16 @@
+Count the number of user events performed by MacBookPro users
 
+Count the number of user events performed by MacBookPro users. Output the result along with the event name. Sort the result based on the event count in the descending order.
+
+
+# Import your libraries
+import pandas as pd
+
+# Start writing code
+playbook_events = playbook_events[playbook_events['device'].str.contains('macbook pro')]
+
+playbook_events.groupby('event_name').size().reset_index(name='event_count').sort_values(by='event_count',ascending=False)
+
+
+
+https://docs.google.com/spreadsheets/d/1abXSPieLpPtnhRlpPWF7ukATxTnxNZw6mQnpTqnwT4s/edit?gid=1803669802#gid=1803669802
